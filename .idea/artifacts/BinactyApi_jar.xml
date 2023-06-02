@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BinactyApi:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BinactyApi_jar</output-path>
+    <root id="archive" name="BinactyApi.jar">
+      <element id="module-output" name="BinactyApi" />
+    </root>
+  </artifact>
+</component>
