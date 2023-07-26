@@ -1,5 +1,7 @@
 package com.mrboomdev.binacty.frontend.graphics.widget.complex;
 
+import com.mrboomdev.binacty.frontend.audio.DynamicMusic;
+import com.mrboomdev.binacty.frontend.audio.Music;
 import com.mrboomdev.binacty.frontend.graphics.widget.Widget;
 
 import java.util.List;
@@ -7,6 +9,8 @@ import java.util.List;
 public class SubtitlesWidget extends Widget {
     private SubtitlesWidgetListener startListener, endListener;
     private List<SubtitlesLine> lines;
+    private DynamicMusic trackedDynamicMusic;
+    private Music trackedMusic;
     private boolean isAuto;
 
     public SubtitlesWidget setLines(List<SubtitlesLine> lines) {
@@ -16,6 +20,16 @@ public class SubtitlesWidget extends Widget {
 
     public SubtitlesWidget setAuto(boolean isAuto) {
         this.isAuto = isAuto;
+        return this;
+    }
+
+    public SubtitlesWidget setTrackedAudio(DynamicMusic dynamicMusic) {
+        this.trackedDynamicMusic = dynamicMusic;
+        return this;
+    }
+
+    public SubtitlesWidget setTrackedAudio(Music music) {
+        this.trackedMusic = music;
         return this;
     }
 

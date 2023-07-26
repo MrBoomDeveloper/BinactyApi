@@ -29,7 +29,7 @@ public class BinactyClient extends PackContext implements DrawableGraphic {
 
     @Override
     public void render() {
-        screen.render();
+        if(screen != null) screen.render();
     }
 
     @Override

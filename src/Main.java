@@ -1,6 +1,7 @@
 import com.mrboomdev.binacty.client.BinactyClient;
 import com.mrboomdev.binacty.frontend.graphics.widget.complex.SubtitlesWidget;
 import com.mrboomdev.binacty.screens.flatworld.FlatWorldScreen;
+import com.mrboomdev.binacty.util.BinactyFile;
 
 import java.util.List;
 
@@ -30,6 +31,9 @@ public class Main {
                     new SubtitlesWidget.SubtitlesLine("The best mobile game engine!", .1f, 16)
             ));
             world.ui.addWidget(subtitles);
+
+            var files = new BinactyFile("songs", BinactyFile.Source.INTERNAL);
+            System.out.println(files.goTo("song.mp3").getPath());
 
             setScreen(world);
         }
