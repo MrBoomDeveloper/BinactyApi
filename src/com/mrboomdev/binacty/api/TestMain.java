@@ -9,15 +9,15 @@ import java.util.List;
 public class TestMain {
 
     public static void main(String[] args) {
-        var client = new TestClient("dhdhd");
+        var client = new TestClient();
         client.create();
     }
 
     private static class TestClient extends BinactyClient {
         FlatWorldScreen world;
 
-        public TestClient(String id) {
-            super(id);
+        public TestClient() {
+            super(null);
         }
 
         @Override

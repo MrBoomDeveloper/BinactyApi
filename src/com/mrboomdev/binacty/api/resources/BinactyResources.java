@@ -3,46 +3,25 @@ package com.mrboomdev.binacty.api.resources;
 import com.mrboomdev.binacty.api.resources.audio.Music;
 import com.mrboomdev.binacty.api.resources.audio.Sound;
 
-public class BinactyResources {
-    private BinactyResources backend;
+public abstract class BinactyResources {
 
-    public Music getMusic(String path) {
-        return backend.getMusic(path);
-    }
+    public abstract BinactyTexture getTexture(String path);
 
-    public Sound getSound(String path) {
-        return backend.getSound(path);
-    }
+    public abstract Music getMusic(String path);
 
-    public BinactyFile getFile(String path) {
-        return backend.getFile(path);
-    }
+    public abstract Sound getSound(String path);
 
-    public boolean isLoaded(String path) {
-        return backend.isLoaded(path);
-    }
+    public abstract BinactyFile getFile(String path);
 
-    public void loadMusic(String path) {
-        backend.loadMusic(path);
-    }
+    public abstract boolean isLoaded(String path);
 
-    public void loadSound(String path) {
-        backend.loadSound(path);
-    }
+    public abstract void loadMusic(String path);
 
-    public void loadTexture(String path) {
-        backend.loadTexture(path);
-    }
+    public abstract void loadSound(String path);
 
-    public void setBackend(BinactyResources newBackend) {
-        this.backend = newBackend;
-    }
+    public abstract void loadTexture(String path);
 
-    public void unload(String path) {
-        backend.unload(path);
-    }
+    public abstract void unload(String path);
 
-    public boolean isLoaded() {
-        return backend.isLoaded();
-    }
+    public abstract boolean isLoaded();
 }

@@ -7,8 +7,8 @@ import org.jetbrains.annotations.NotNull;
 public class BinactyClient extends PackContext implements DrawableGraphic {
     private DrawableGraphic screen;
 
-    public BinactyClient(String id) {
-        super(id);
+    public BinactyClient(PackContext context) {
+        super(context);
     }
 
     @Override

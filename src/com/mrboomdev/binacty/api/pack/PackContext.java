@@ -1,52 +1,31 @@
 package com.mrboomdev.binacty.api.pack;
 
-import com.mrboomdev.binacty.api.resources.BinactyFile;
+import com.mrboomdev.binacty.api.resources.BinactyResources;
 
 public abstract class PackContext {
-    private String id;
-    private boolean isReady;
-    private BinactyFile codeSource, externalSource;
+    private final PackContext parentContext;
 
-    public PackContext(String id) {
-        this.id = id;
+    public PackContext(PackContext parentContext) {
+        this.parentContext = parentContext;
     }
 
     public String getId() {
-        return this.id;
+        return parentContext.getId();
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setSource(BinactyFile codeSource, BinactyFile externalSource) {
-        this.codeSource = codeSource;
-    }
-
-    public void setSource(BinactyFile source) {
-        this.codeSource = codeSource;
-        this.externalSource = codeSource;
-    }
-
-    public BinactyFile getCodeSource() {
-        return codeSource;
-    }
-
-    public BinactyFile getExternalSource() {
-        return externalSource;
+    public BinactyResources getResources() {
+        return parentContext.getResources();
     }
 
     public PackContext getContext() {
-        return this;
+        return parentContext;
     }
 
     public boolean isReady() {
-        return this.isReady;
+        return parentContext.isReady();
     }
 
-    public Object getFile() {
-        return null;
+    public void start() {
+        parentContext.start();
     }
-
-    public abstract void start();
 }
