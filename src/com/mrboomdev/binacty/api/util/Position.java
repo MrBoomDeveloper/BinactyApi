@@ -2,7 +2,7 @@ package com.mrboomdev.binacty.api.util;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Position {
+public class Position implements Positionable {
     public float x, y;
 
     public Position() {}
@@ -15,5 +15,10 @@ public class Position {
     public Position(@NotNull Position position) {
         this.x = position.x;
         this.y = position.y;
+    }
+
+    @Override
+    public Position getPosition() {
+        return this;
     }
 }

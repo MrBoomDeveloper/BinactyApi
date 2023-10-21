@@ -13,6 +13,10 @@ public abstract class PackContext {
         return parentContext.getId();
     }
 
+    public PackSaves getSaves() {
+        return parentContext.getSaves();
+    }
+
     public BinactyResources getResources() {
         return parentContext.getResources();
     }
@@ -27,5 +31,9 @@ public abstract class PackContext {
 
     public void start() {
         parentContext.start();
+    }
+
+    public void update() {
+        parentContext.update();
     }
 }

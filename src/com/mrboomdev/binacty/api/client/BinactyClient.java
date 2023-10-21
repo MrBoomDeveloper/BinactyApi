@@ -7,6 +7,14 @@ import org.jetbrains.annotations.NotNull;
 public class BinactyClient extends PackContext implements DrawableGraphic {
     private DrawableGraphic screen;
 
+    @Override
+    public void update() {
+        super.update();
+
+        var screen = getScreen();
+        if(screen != null) screen.update();
+    }
+
     public BinactyClient(PackContext context) {
         super(context);
     }
