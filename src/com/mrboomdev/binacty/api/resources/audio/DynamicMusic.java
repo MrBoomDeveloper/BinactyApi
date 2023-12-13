@@ -1,9 +1,9 @@
 package com.mrboomdev.binacty.api.resources.audio;
 
-import com.mrboomdev.binacty.api.util.Position;
+import com.mrboomdev.binacty.api.util.Position2D;
 
 public class DynamicMusic extends Music implements DynamicAudio {
-    private Position position;
+    private Position2D position;
     private final Music music;
 
     public DynamicMusic(Music music) {
@@ -11,12 +11,12 @@ public class DynamicMusic extends Music implements DynamicAudio {
     }
 
     @Override
-    public Position getPosition() {
+    public Position2D getPosition() {
         return position;
     }
 
     @Override
-    public void setPosition(Position position) {
+    public void setPosition(Position2D position) {
         this.position = position;
     }
 
